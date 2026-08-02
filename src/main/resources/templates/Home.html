@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Blood Bank Management System</title>
+    <link rel="stylesheet" th:href="@{/css/home.css}">
+</head>
+
+<body>
+<div class="container">
+    <h1>Blood Bank Management System</h1>
+
+    <p>
+        Blood Bank Management System is a simple web application that allows users
+        to add donors, view the donor list, and request blood services.
+    </p>
+
+    <div class="button-group">
+        <form th:action="@{/donors}" method="get">
+            <button type="submit">View Donors</button>
+        </form>
+
+        <form th:action="@{/Home/addDonors}" method="get">
+            <button type="submit">Add Donor</button>
+        </form>
+
+        <form th:action="@{/Home/requesting}" method="get">
+            <button type="submit">Request Service</button>
+        </form>
+    </div>
+</div>
+</body>
+
+</html>

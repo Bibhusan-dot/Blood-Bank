@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Donors List</title>
+    <link rel="stylesheet" th:href="@{/css/donors.css}"/>
+</head>
+
+<body>
+<div class="container">
+    <h2>All Donors</h2>
+
+    <a th:href="@{/donors/new}" class="add-link">+ Add New Donor</a>
+
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Blood Type</th>
+            <th>Contact Number</th>
+            <th>Email</th>
+            <th>Last Donation Date</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="donor : ${donors}">
+            <td th:text="${donor.donorId}"></td>
+            <td th:text="${donor.name}"></td>
+            <td th:text="${donor.age}"></td>
+            <td th:text="${donor.bloodType}"></td>
+            <td th:text="${donor.contactNumber}"></td>
+            <td th:text="${donor.email}"></td>
+            <td th:text="${donor.lastDonationDate}"></td>
+        </tr>
+        <tr th:if="${#lists.isEmpty(donors)}">
+            <td colspan="7" class="empty-row">No donors found.</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <a th:href="@{/}" class="back-link">← Back to Home</a>
+</div>
+</body>
+</html>

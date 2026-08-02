@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Blood Unit Info</title>
+</head>
+<body>
+    <h2>All information</h2>
+
+    <div th:each="bloodunit: ${bloodUnit}">
+            blood unit id : <span th:text="${bloodunit.donorId}"></span>
+            blood group : <span th:text="${bloodunit.bloodType}"></span>
+            donor:<span th:text="${bloodunit.name}"></span>
+    </div>
+</body>
+</html>
